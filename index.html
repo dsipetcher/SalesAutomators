@@ -1,0 +1,22 @@
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/@pipedrive/app-extensions-sdk@0/dist/index.umd.js">
+    
+  </script>
+</head>
+<body>
+  <script>
+    (async function() {
+      const sdk = await new AppExtensionsSDK().initialize();
+    })();
+    (async function() {
+      const sdk = await new AppExtensionsSDK().initialize({ size: { height: 700, width: 800 } });
+    })();
+  </script>
+</body>
+<iframe
+  id="inlineFrameExample"
+  title="Inline Frame Example"
+  width="100%"
+  height="100%"
+  src="https://scented-pale-espadrille.glitch.me/">
+</iframe>
