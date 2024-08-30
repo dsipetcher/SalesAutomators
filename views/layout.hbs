@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="/css/style.css">
+<html>
+  <head>
+  <script> Content-Security-Policy:src="https://cdn.jsdelivr.net/npm/@pipedrive/app-extensions-sdk@0/dist/index.umd.js";</script>
+</head>
+<body>
+    <form id="dealForm">
+        <fieldset class="fieldsetclient"> 
+          <div>
+            <div id="Capital">Client details</div>
+              <div id="name">
+                <input type="text" id="first-name" class="resizedTextbox" name="first-name" placeholder="First name" required>
+
+                <input type="text" id="last-name" class="resizedTextbox" name="last-name" placeholder="Last name" required>
+              </div>
+              <div id="name">
+                <input type="tel" id="phone" class="fullsizebox" size="40" name="phone" placeholder="Phone" required>
+
+                <input type="text" id="email" class="fullsizebox" size="40" name="email" placeholder="Email (optional)" required>
+              </div>  
+          </div>
+        </fieldset>
+        <fieldset class="fieldsetjobs">
+          <div>
+            <div id="Capital">Job Details</div>
+              <div id="name">
+                <select id="job-type" name="job-type" required>
+                  <option style="color: rgb(171, 164, 164);" value="" disabled selected>Job type</option>
+                </select>
+                <select id="job-source" name="job-source" required>
+                  <option value="" id='Small'disabled selected>Job source</option>
+                </select>
+                <input type="text" id="job-description" class="jobdescr" name="job-description" placeholder="Job description (optional)" required></input>
+              </div>            
+          </div>
+        </fieldset>
+        <fieldset class="fieldsetadress">
+          <div id="name">
+            <div id="Capital">Service Location</div>
+              <div>
+                  <input type="text" class="fullsizeboxadres" id="address" name="address" placeholder="Address" required>
+
+                  <input type="text" class="fullsizeboxadres" id="city" name="city" placeholder="City" required>
+
+                  <input type="text" class="fullsizeboxadres" id="state" name="state" placeholder="State" required>
+
+                  <input type="text" class="resizedTextboxadres" id="zip-code" name="zip-code" placeholder="Zip code" required>
+              
+                  <select id="area"  name="area" placeholder="Area" required>
+                    <option value="" disabled selected>Area</option>
+                  </select>
+              </div>    
+          </div>
+        </fieldset>
+        <fieldset class="fieldsetscheduled">
+          <div id="name">
+            <div id="Capital" class="sctext">Scheduled</div>
+                    
+              <input type="text" class="date" id="start-date" name="start-date" placeholder="start-date" onfocus="(this.type='date')" required/>
+              
+              <input type="text" class="time1" id="start-time" name="start-time" placeholder="start-time" onfocus="(this.type='time')" required>
+              
+              <input type="text" class="time2" id="end-time" name="end-time" placeholder="end-time" onfocus="(this.type='time')" required>
+              
+              <select id="test-select" class="fullsizeboxtest" name="test-select" required>
+                <option value="" disabled selected>Test Select</option>
+              </select>
+
+          </div>
+        </fieldset>
+        <button type="submit" class="subbut">Create Job</button>
+    </form>
+    <script>
+      (async function() {
+      const sdk = await new AppExtensionsSDK().initialize();
+    })();
+      const options1 = [
+    'Type 1',
+    'Type 2',
+    'Type 3'];
+    const dropdown1 = document.getElementById('job-type');
+    options1.forEach(option => {
+const optionElement = document.createElement('option');
+optionElement.value = option;
+optionElement.text = option;
+dropdown1.add(optionElement);
+});
+dropdown1.addEventListener('change', () => {
+const selectedOption = dropdown1.value;
+console.log('Selected option:', selectedOption);
+});
+const options2 = [
+    'Job source 1',
+    'Job source 2',
+    'Job source 3'];
+    const dropdown2 = document.getElementById('job-source');
+    options2.forEach(option => {
+const optionElement = document.createElement('option');
+optionElement.value = option;
+optionElement.text = option;
+dropdown2.add(optionElement);
+});
+dropdown2.addEventListener('change', () => {
+const selectedOption = dropdown2.value;
+console.log('Selected option:', selectedOption);
+});
+const options3 = [
+    'Area 1',
+    'Area 2',
+    'Area 3'];
+    const dropdown3 = document.getElementById('area');
+    options3.forEach(option => {
+const optionElement = document.createElement('option');
+optionElement.value = option;
+optionElement.text = option;
+dropdown3.add(optionElement);
+});
+dropdown3.addEventListener('change', () => {
+const selectedOption = dropdown3.value;
+console.log('Selected option:', selectedOption);
+});
+const options4 = [
+    'Test 1',
+    'Test 2',
+    'Test 3'];
+    const dropdown4 = document.getElementById('test-select');
+    options4.forEach(option => {
+const optionElement = document.createElement('option');
+optionElement.value = option;
+optionElement.text = option;
+dropdown4.add(optionElement);
+});
+dropdown4.addEventListener('change', () => {
+const selectedOption = dropdown4.value;
+console.log('Selected option:', selectedOption);
+});
+  const form = document.getElementById('dealForm');
+  const apiKey = '899bfa6929b31437e827d12b6f8d401133548f8a';
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const dealData = {
+      title:'job'+ '#'+ Math.floor (Math.random () * (10000 - 1 + 1)) + 1,
+      '728cfcd1f4f43823324160c7076b9fd09683bba6': formData.get('first-name'),
+      '3911ecd91b93950bc1aa0ee23df44d94e2fb2e22': formData.get('last-name'),
+      pipeline_id: '1',
+      stage_id: '1',
+      '217dbd636cdcb3e8322ffb07059c59a254a80c79': formData.get('phone'),
+      '64a453d09fc30b1111f112a5e948f2262334ca0e': formData.get('email'),
+      'c36f01a198403aa229110849696d84ebd15f47da': formData.get('address'),
+      '7d79c621d7440959b79670d84c18e0741b4416ea': formData.get('city'),
+      '53ee87f9c39854aa8d8438913e01254ea621a2a8': formData.get('state'),
+      '3ad8178e348ef67af9ab9b175b9b50837f500101': formData.get('zip-code'),
+      '476815e28b1a997d549a2732cb976fc0bafceed9': formData.get('area'),
+      '818416362fc547bccc1af3e6c7703ccff17da983': formData.get('job-type'),
+      '8c3351da6176411905eadaa0e94aaf3290786e9f': formData.get('job-source'),
+      '111822af62a719a50a1ec53d271765eeabe6f6da': formData.get('job-description'),
+      '1b59fa1296e47487e71aac76788495f423ab1e83': `${formData.get('start-date')}T${formData.get('start-time')}:00`,
+      '1b59fa1296e47487e71aac76788495f423ab1e83': formData.get('start-time'),
+      '686af8134c1da5a3f73312336a90db23ca987bc8': formData.get('end-time'),
+      '45b284d78b6531978b0f4e735de91d700cc2834c': formData.get('test-select')
+    };
+
+    try {
+      const response = await fetch('https://api.pipedrive.com/v1/deals?api_token=' + apiKey, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dealData)
+      });
+
+      if (response.ok) {
+        console.log('Deal created successfully!');
+        form.reset();
+      } else {
+        console.error('Error creating deal:', await response.json());
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  });
+    </script>
+</body>
+</html>

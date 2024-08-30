@@ -1,0 +1,266 @@
+.jumbotron {
+    height: 100vh;
+    opacity: 0;
+    animation: reveal 4s forwards;
+}
+
+.outcome-won {
+    background-color: green!important;
+}
+
+.outcome-lost {
+    background-color: red!important;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+#Capital {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    letter-spacing: 0px;
+    word-spacing: 2px;
+    color: #505050;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    margin-left: 5px;
+    margin-bottom: 15px;
+}
+#Small {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        letter-spacing: 0px;
+        word-spacing: 2px;
+        color: #777777;
+        font-weight: normal;
+        text-decoration: none;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+        }
+#name{
+    margin-inline-start: 0px; 
+writing-mode: horizontal-tb;
+}
+.resizedTextbox {width: 138.5px; margin-left: 2px; height: 30px; border-radius: 10px; border-color: #b5b2b2;}
+.resizedTextboxadres {width: 138px; margin-left: 2px; margin-top: 7px; height: 30px; border-radius: 10px; border-color: #b5b2b2;}
+.fieldsetclient{
+    box-shadow: 2px 2px #cbc7c7;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    display: inline;
+    position: fixed;
+    top:40px;
+    left: 40px;  
+    place-content: flex-end center;
+    padding: 10px;
+    margin: auto;
+    text-align: left;
+    border-color: #50505000;
+       }
+.fieldsetjobs{
+        box-shadow: 2px 2px #cbc7c7;
+        width: 300px;
+        height: 200px;
+        border-radius: 10px;
+        display: inline;
+        position: fixed;
+        top:40px;
+        left: 380px;  
+        place-content: flex-end center;
+        padding: 10px;
+        margin: auto;
+        text-align: left;
+        border-color: #50505000;
+           }
+.fieldsetadress{
+            box-shadow: 2px 2px #cbc7c7;
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            display: inline;
+            position: fixed;
+            top: 280px;
+            left: 40px;  
+            place-content: flex-end center;
+            padding: 10px;
+            margin: auto;
+            text-align: left;
+            border-color: #50505000;
+               }
+.fieldsetscheduled{
+                box-shadow: 2px 2px #cbc7c7;
+                width: 300px;
+                height: 200px;
+                border-radius: 10px;
+                display: inline;
+                position: fixed;
+                top: 280px;
+                left: 380px;  
+                place-content: flex-end center;
+                padding: 10px;
+                margin: auto;
+                text-align: left;
+                border-color: #50505000;
+                   }                                   
+.fullsizebox {
+    margin-top: 20px;
+    width: 290px;
+    height: 30px;
+    margin-left: 2px;
+    border-radius: 10px;
+    border-color: #d4cece
+    }
+    .fullsizeboxadres {
+        margin-top: 7px;
+        width: 290px;
+        height: 30px;
+        margin-left: 2px;
+        border-radius: 10px;
+        border-color: #d4cece
+        }
+        .fullsizeboxdate {
+            margin-bottom: 20px;
+            width: 290px;
+            height: 30px;
+            margin-left: 2px;
+            border-radius: 10px;
+            border-color: #d4cece
+            }   
+            .fullsizeboxtest {
+                margin-bottom: 39px;
+                width: 295px;
+                height: 33px;
+                margin-left: 2px;
+                border-radius: 10px;
+                border-color: #d4cece
+                }  
+
+    select {
+        /*-webkit-appearance: button;
+        -moz-appearance: button;
+        -webkit-user-select: none;
+        -moz-user-select: none;*/
+        -webkit-padding-end: 20px;
+        -moz-padding-end: 20px;
+        -webkit-padding-start: 2px;
+        -moz-padding-start: 2px;
+        background-color: #ffffff00; /* Fallback color if gradients are not supported */
+        /*background-image: url(https://vh310-fm.sweb.ru/files/public_html/arow.png), -webkit-linear-gradient(top, #E5E5E5, #F4F4F4); /* For Chrome and Safari */
+        /*background-image: url(https://vh310-fm.sweb.ru/files/public_html/arow.png), -moz-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Firefox (3.6 to 15) */
+        /*background-image: url(https://vh310-fm.sweb.ru/files/public_html/arow.png), -ms-linear-gradient(top, #E5E5E5, #F4F4F4); /* For pre-releases of Internet Explorer  10*/
+        /*background-image: url(https://vh310-fm.sweb.ru/files/public_html/arow.png), -o-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Opera (11.1 to 12.0) */
+        /*background-image: url(https://vh310-fm.sweb.ru/files/public_html/arow.png), linear-gradient(to bottom, #E5E5E5, #F4F4F4); /* Standard syntax; must be last */
+        background-position: center right;
+        background-repeat: no-repeat;
+        border: 1px solid #a8a8a8;
+        border-radius: 10px;
+        font-size: inherit;
+        margin-left: 2.5px;
+        overflow: hidden;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 145px;
+        height: 35px;
+        margin-top: 6px;
+        color:#5e5a5a;
+      } 
+      iframe {
+        width: 100%;
+        height: 100%;
+      }   
+.jobdescr {
+    width: 290px;
+    height: 100px;
+    margin-left: 2px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border-color: #d4cece
+}      
+fieldset input {
+    border-color: #d4cece;
+    margin-left: 5px;
+}
+.time1 {
+    border-color: #d4cece;
+    width: 140px;
+    height: 30px;
+    margin-left: 2px;
+    border-radius: 10px;
+    position: fixed;
+    top: 379px;
+    left: 390px;
+}
+.time2 {
+    border-color: #d4cece;
+    width: 140px;
+    height: 30px;
+    margin-left: 2px;
+    border-radius: 10px;
+    position: fixed;
+    top: 379px;
+    left: 545px;
+}
+.subbut {
+    position: fixed;
+    top: 550px ;
+    left: 320px ;
+    border-radius: 20px;
+    height: 40px;
+    width: 120px;
+    background-color: #eafa05;
+    font-size: large;
+    border-color: #e5e5e500;
+}
+.sctext {
+    position: fixed;
+    top: 290px ;
+    left: 400px ;
+}
+.date {
+    margin-top: 20px;
+    width: 295px;
+    height: 32px;
+    margin-left: 2px;
+    border-radius: 10px;
+    border-color: #d4cece;
+    position: fixed;
+    top: 316px;
+    left: 390px;
+    
+}
+::placeholder {
+    color: #b1aeae;
+}
+input[type="date"]::before { 
+    content: attr(data-placeholder);
+    width: 100%;
+}
+
+/* hide our custom/fake placeholder text when in focus to show the default
+ * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
+ */
+input[type="date"]:focus::before,
+input[type="date"]:valid::before { display: none }
+.subbut:focus {
+    position: fixed;
+    top: 550px ;
+    left: 320px ;
+    border-radius: 20px;
+    height: 40px;
+    width: 120px;
+    background-color: red;
+    font-size: large;
+    border-color: #e5e5e500;
+}
